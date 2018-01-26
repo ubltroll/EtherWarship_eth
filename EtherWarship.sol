@@ -211,5 +211,11 @@ contract ShipBase is ShipAccessControl{
         	_transfer(0, _owner, newShipId);
         	return newShipId;
         }
+}
 
+contract ShipOwnership is ShipBase, ERC721 {
+    /// @notice Name and symbol of the non fungible token, as defined in ERC721.
+    string public constant name = "EtherWarship";
+    string public constant symbol = "EWS";
+    
 }
