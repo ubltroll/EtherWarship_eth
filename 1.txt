@@ -1,0 +1,42 @@
+EtherWarshipHNP
+	-sent eth to this contract and get token back.
+	-ownerale
+	-able to transfer
+
+
+
+
+
+
+
+
+
+
+
+
+
+***********************************for test, commands in truffle consle**********************
+EtherWarshipHNP.deployed()
+.then(function(response) {
+  contract = response;
+  return contract.function(arg1, arg2, {from: account2});
+HNP2Ship.deployed().then(function(response) {contract = response;return contract.setHNPcontract(EtherWarshipHNP.address, {from: accounts[0]});
+EtherWarshipHNP.deployed().then(inst => { EtherWarshipHNPInstance = inst })
+HNP2Ship.deployed().then(inst => { HNP2ShipInstance = inst })
+
+0xf204a4ef082f5c04bb89f7d5e6568b796096735a
+EtherWarshipHNPInstance.transfer('0x627306090abaB3A6e1400e9345bC60c78a8BEf57', 1, {from: account2})
+EtherWarshipHNPInstance.transfer('0xf204a4ef082f5c04bb89f7d5e6568b796096735a', 500,{from: account2})
+
+
+HNP2ShipInstance.setHNPcontract(EtherWarshipHNP.address, {from: web3.eth.accounts[0]})
+EtherWarshipHNPInstance.transfer(HNP2Ship.address, 2,{from: web3.eth.accounts[1]})
+
+HNP2ShipInstance.getship(web3.eth.accounts[6])
+
+
+HNP2ShipInstance.setprice(1,2,3,4, {from: web3.eth.accounts[0]})
+
+web3.eth.getBalance(EtherWarshipHNPInstance.address)
+
+EtherWarshipHNPInstance.transfer('0x627306090abaB3A6e1400e9345bC60c78a8BEf57', 1, {from: web3.eth.accounts[0]})
