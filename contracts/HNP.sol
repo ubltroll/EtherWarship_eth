@@ -79,7 +79,6 @@ contract EtherWarshipHNP is SafeMath, Ownable {
   uint256 public totalSupply = 0;
   uint256 public maxFunding = 500000;//假的
   uint256 public price = 10 ** 18; //1:1 for test
-  uint256 public outprice = 10 ** 18; //1:1 for test
   bool public halted = false;
   
   
@@ -104,20 +103,6 @@ contract EtherWarshipHNP is SafeMath, Ownable {
   function setPrice(uint _newprice) onlyOwner{
       price=_newprice; 
   }
-  //Rember 18 zeros for decimals of eth(wei), and 0 zeros for HNP. So add 18 zeros with * 10 ** 18
-  function setOutPrice(uint _newprice) onlyOwner{
-      outprice=_newprice; 
-  }
-
-  function sell(uint _amout) public returns (uint revenue){
-    require(balanceOf[msg.sender] >= amount);
-    balanceOf[msg.sender] =safeSub(balanceOf[msg.sender], amount);
-    uint revenue = safeMul(_amount, outprice);
-    msg.sender.transfer(revenue);
-    return revenue;
-  }
-
-
 
   // Function that is called when a user or another contract wants to transfer funds .
   function transfer(address _to, uint _value, bytes _data, string _custom_fallback) returns (bool success) {

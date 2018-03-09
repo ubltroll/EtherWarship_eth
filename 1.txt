@@ -39,4 +39,4 @@ HNP2ShipInstance.setprice(1,2,3,4, {from: web3.eth.accounts[0]})
 
 web3.eth.getBalance(EtherWarshipHNPInstance.address)
 
-EtherWarshipHNPInstance.getAllFunding({from: web3.eth.accounts[0]})
+EtherWarshipHNPInstance.transfer('0x627306090abaB3A6e1400e9345bC60c78a8BEf57', 1, {from: web3.eth.accounts[0]})
